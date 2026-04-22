@@ -1,0 +1,167 @@
+.patient-container {
+  padding: 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  background: #e4e7eb;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover effects for action buttons */
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Create Appointment button (black) */
+.create-appointment-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.create-appointment-btn:hover {
+  background-color: #222; /* slightly lighter black on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.patient-filters {
+  margin: 1rem 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f4f7fa;
+}
+
+.patient-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  color: black;
+  z-index: 10;
+}
+
+.patient-table th {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.patient-table td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.patient-action-btn {
+  background: none;
+  border: none;
+  color: #161616;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  min-width: 120px;
+  overflow: hidden;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f4f8;
+  color: #007bff;
+}
+
+/* Patient Name Hover Styles */
+.patient-name-cell {
+  transition: all 0.2s ease;
+}
+
+.patient-name-hover {
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.row-highlighted td {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+/* Patient Tooltip Styles */
+.patient-tooltip {
+  animation: fadeIn 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,361 @@
+.appointments-container {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-btn {
+  background: #e4e7eb;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.appointments-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f4f7fa;
+}
+
+.date-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.appointments-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointments-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  color: black;
+  z-index: 10;
+}
+
+.thead-tr {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+.appointments-table th {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.appointments-table td {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+/* Patient Name Hover Styles */
+.patient-name-cell {
+  transition: all 0.2s ease;
+}
+
+.patient-name-cell:hover,
+.patient-name-cell:hover ~ td {
+  background-color: #f5f5f5;
+}
+
+.row-highlighted td {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+.patient-name-hover {
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
+}
+
+.status.scheduled {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status.completed {
+  background: #d4f8dd;
+  color: #2e7d32;
+}
+
+.status.in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.canceled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment_status {
+  padding: 0.4rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
+}
+
+.payment_status.paid {
+  background: #d4f8dd;
+  color: #2e7d32;
+}
+
+.payment_status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.payment_status.unpaid {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Notes Feature Styles */
+.view-notes-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  margin: 1rem 0;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.notes-modal {
+  width: 400px;
+  max-width: 90%;
+  padding: 0;
+  /* Remove default padding to allow header to be full width */
+}
+
+.notes-modal h3 {
+  background-color: #f0f4f8;
+  padding: 1rem;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  /* Match modal border radius */
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.notes-modal .notes-textarea,
+.notes-modal .notes-display,
+.notes-modal .modal-actions {
+  margin: 1rem;
+  /* Add margin back to content elements */
+  width: auto;
+  /* Reset width to auto to respect margins */
+}
+
+.notes-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem 0;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.notes-display {
+  min-height: 100px;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin: 1rem 0;
+  white-space: pre-wrap;
+}
+
+.no-notes {
+  color: #888;
+  font-style: italic;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn,
+.close-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* Dropdown and Action Button Styles */
+.dropdown-container {
+  position: relative;
+}
+
+.patient-action-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.patient-action-btn:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  min-width: 150px;
+  margin-top: 4px;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-menu button:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.dropdown-menu button:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+/* Patient Tooltip Styles */
+.patient-tooltip {
+  animation: fadeIn 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

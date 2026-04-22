@@ -1,0 +1,31 @@
+.wrapper {
+    width: 200px;
+    margin: 0;
+    background: #f4f4f4;
+    height: 100vh;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    border-right: 1px solid grey;
+
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.Link {
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    transition: background-color 0.2s;
+}
+
+.Link.active {
+    background-color: #e0e0e0;
+    border-left: 4px solid #000000;
+}
